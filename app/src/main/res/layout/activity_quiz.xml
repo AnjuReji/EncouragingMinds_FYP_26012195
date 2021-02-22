@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".QuizActivity">
+
+    <TextView
+        android:id="@+id/txtTotalQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/latoregular"
+        android:gravity="center_horizontal"
+        android:text="Questions: 1/10"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/latoregular"
+            android:gravity="left"
+            android:text="Score: 1/10"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/txtViewTimer"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/latoregular"
+            android:gravity="right"
+            android:text="00:30"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtQuestionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/question_container_background"
+            android:fontFamily="@font/latobold"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="What emotion is being displayed?"
+            android:textColor="#F3EFEF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="300dp"
+            android:layout_height="260dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/happy8" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent" >
+
+            <RadioButton
+                android:id="@+id/radio_button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttons_background"
+                android:button="@null"
+                android:fontFamily="@font/latoregular"
+                android:freezesText="true"
+                android:gravity="center_horizontal"
+                android:padding="12sp"
+                android:text="Anger"
+                android:textAlignment="center"
+                android:textColor="#F4EFEF"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttons_background"
+                android:button="@null"
+                android:fontFamily="@font/latoregular"
+                android:freezesText="true"
+                android:gravity="center_horizontal"
+                android:padding="12sp"
+                android:text="Happy"
+                android:textAlignment="center"
+                android:textColor="#F4F1F1"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttons_background"
+                android:button="@null"
+                android:fontFamily="@font/latoregular"
+                android:freezesText="true"
+                android:gravity="center_horizontal"
+                android:padding="12sp"
+                android:text="Sad"
+                android:textAlignment="center"
+                android:textColor="#F8F5F5"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttons_background"
+                android:button="@null"
+                android:fontFamily="@font/latoregular"
+                android:freezesText="true"
+                android:gravity="center_horizontal"
+                android:padding="12sp"
+                android:text="Disgust"
+                android:textAlignment="center"
+                android:textColor="#F6F3F3"
+                android:textSize="18sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/confirm_button_background"
+            android:fontFamily="@font/latobold"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
