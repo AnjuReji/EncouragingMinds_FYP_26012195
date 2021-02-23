@@ -3,14 +3,16 @@ package com.example.encouragingminds;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import static java.lang.Thread.sleep;
 
-public class SplashScreen extends QuizBaseActivity {
+public class SplashScreen extends AppCompatActivity {
 
     private final static int EXIT_CODE = 100;
 
@@ -19,6 +21,9 @@ public class SplashScreen extends QuizBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_splash_screen);
 
         imgViewLogo = findViewById(R.id.imgviewLogo);

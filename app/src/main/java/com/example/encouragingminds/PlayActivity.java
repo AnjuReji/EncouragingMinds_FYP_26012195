@@ -7,10 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class PlayActivity extends QuizBaseActivity {
+public class PlayActivity extends AppCompatActivity {
 
 
     private long backPressedTime;
@@ -18,6 +19,9 @@ public class PlayActivity extends QuizBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_play);
 
         Button btPlay = findViewById(R.id.bt_playbutton);
