@@ -255,7 +255,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q16 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.sad2,
+                R.drawable.sad18,
                 "Happy",
                 "Anger",
                 "Sad",
@@ -303,7 +303,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q20 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.neutral1,
+                R.drawable.neutral37,
                 "Neutral",
                 "Happy",
                 "Sad",
@@ -315,7 +315,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q21 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.happy1,
+                R.drawable.happy38,
                 "Anger",
                 "Happy",
                 "Sad",
@@ -327,7 +327,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q22 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.neutral2,
+                R.drawable.neutral38,
                 "Neutral",
                 "Sad",
                 "Anger",
@@ -339,7 +339,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q23 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.sad3,
+                R.drawable.sad19,
                 "Happy",
                 "Neutral",
                 "Sad",
@@ -351,7 +351,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q24 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.anger1,
+                R.drawable.anger12,
                 "Sad",
                 "Happy",
                 "Neutral",
@@ -363,7 +363,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q25 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.happy2,
+                R.drawable.happy39,
                 "Neutral",
                 "Anger",
                 "Happy",
@@ -375,7 +375,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q26 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.neutral3,
+                R.drawable.neutral39,
                 "Anger",
                 "Neutral",
                 "Sad",
@@ -399,7 +399,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q28 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.anger2,
+                R.drawable.anger13,
                 "Anger",
                 "Sad",
                 "Happy",
@@ -411,7 +411,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Questions q29 = new Questions(
                 "What emotion is being displayed?",
-                R.drawable.happy3,
+                R.drawable.happy40,
                 "Sad",
                 "Happy",
                 "Neutral",
