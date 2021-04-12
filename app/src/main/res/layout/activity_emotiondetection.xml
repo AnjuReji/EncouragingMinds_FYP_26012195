@@ -9,42 +9,82 @@
     tools:context=".BeginnerLevelsActivity">
 
 
-    <ImageView
-        android:id="@+id/emotionView"
+    <ProgressBar
+        android:id="@+id/classification_progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
-        android:layout_height="600dp" />
-
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        tools:visibility="visible" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="41dp"
-        android:weightSum="2">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp">
 
-        <Button
-            android:id="@+id/btnTakePicture"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="0dp"
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@android:color/darker_gray"
+                android:maxWidth="240dp"
+                android:maxHeight="240dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/latoregular"
-            android:text="Take Picture"
-            android:textColor="@color/white" />
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="8dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnProcess"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="0dp"
+            <Button
+                android:id="@+id/take_photo_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/latoregular"
+                android:text="Take Photo"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/pick_image_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/latoregular"
+                android:text="PICK IMAGE"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/black" />
+
+        <ExpandableListView
+            android:id="@+id/classification_expandable_list_view"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/latoregular"
-            android:text="Process"
-            android:textColor="@color/white" />
-
+            android:childDivider="#A8A4A4"
+            android:divider="#989494"
+            android:dividerHeight="1.5dp" />
 
     </LinearLayout>
 

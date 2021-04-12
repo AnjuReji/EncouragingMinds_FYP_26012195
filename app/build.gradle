@@ -14,11 +14,22 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    aaptOptions {
+        noCompress "tflite"
+        noCompress "lite"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 }
@@ -31,4 +42,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'org.tensorflow:tensorflow-lite:2.2.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly'
+    implementation platform('com.google.firebase:firebase-bom:26.8.0')
+    implementation 'com.google.firebase:firebase-ml-vision-face-model:20.0.1'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation  'com.google.mlkit:face-detection:16.0.6'
+    implementation  'com.google.mlkit:image-labeling:17.0.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.mlkit:face-detection:16.0.6'
 }
