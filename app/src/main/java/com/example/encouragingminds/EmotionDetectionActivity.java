@@ -3,9 +3,6 @@ package com.example.encouragingminds;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
@@ -42,11 +39,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
-public class EmotionDetectionActivity<FirebaseVisionFaceDetectorOptions> extends AppCompatActivity implements View.OnClickListener {
-
-    private InputStream in;
-    BufferedReader d
-            = new BufferedReader(new InputStreamReader(null));
+public class EmotionDetectionActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int GALLERY_REQUEST_CODE = 0;
     private static final int TAKE_PHOTO_REQUEST_CODE = 1;
@@ -71,7 +64,6 @@ public class EmotionDetectionActivity<FirebaseVisionFaceDetectorOptions> extends
     private Map<String, List<Pair<String, String>>> mClassificationResult;
 
     public EmotionDetectionActivity(InputStream in) {
-        this.in = in;
     }
 
 
