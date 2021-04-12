@@ -47,7 +47,8 @@ public class ImageUtils {
         if (orientationAngle != 0) {
             Matrix matrix = new Matrix();
             matrix.postRotate(orientationAngle);
-            Bitmap rotatedBitmap = Bitmap.createBitmap(
+
+            return Bitmap.createBitmap(
                     imageBitmap,
                     0,
                     0,
@@ -55,8 +56,6 @@ public class ImageUtils {
                     imageBitmap.getHeight(),
                     matrix,
                     true);
-
-            return rotatedBitmap;
         }
 
         return imageBitmap;

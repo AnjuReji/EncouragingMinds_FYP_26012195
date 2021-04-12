@@ -3,6 +3,9 @@ package com.example.encouragingminds;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,12 +18,12 @@ import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.encouragingminds.classifiers.TFLiteImageClassifier;
 import com.example.encouragingminds.utils.ImageUtils;
 import com.example.encouragingminds.utils.SortingHelper;
 import com.google.firebase.BuildConfig;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -33,11 +36,13 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
-public class EmotionDetectionActivity extends AppCompatActivity implements View.OnClickListener {
+public class EmotionDetectionActivity<FirebaseVisionFaceDetectorOptions> extends AppCompatActivity implements View.OnClickListener {
 
     private InputStream in;
     BufferedReader d
@@ -107,7 +112,7 @@ public class EmotionDetectionActivity extends AppCompatActivity implements View.
         mClassifier.close();
 
         File picturesDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        for (File tempFile : picturesDir.listFiles()) {
+        for (File tempFile : Objects.requireNonNull(picturesDir.listFiles())) {
             tempFile.delete();
         }
     }
@@ -191,7 +196,8 @@ public class EmotionDetectionActivity extends AppCompatActivity implements View.
     }
 
     private Bitmap getScaledImageBitmap(Uri imageUri) {
-        Bitmap scaledImageBitmap = null;
+        Bitmap scaledImageBitmap;
+        scaledImageBitmap = null;
 
         try {
             Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(
@@ -235,7 +241,7 @@ public class EmotionDetectionActivity extends AppCompatActivity implements View.
         return scaledImageBitmap;
     }
 
-    // firebase variables is meant to go "detect faces private void class"
+
 
 
     private void classifyEmotions(Bitmap imageBitmap, int faceId) {
@@ -308,7 +314,36 @@ public class EmotionDetectionActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
 
+            case R.id.take_photo_button: // take photo
+
+                createactivityforTakingPhotos();
+
+                Intent intentTakePhoto = new Intent(EmotionDetectionActivity.this, TakePhoto.class);
+                intentTakePhoto.putExtra("Category", CategoryConstants.EMOTIONDETECTION);
+                startActivity(intentTakePhoto);
+
+                break;
+
+            case R.id.pick_image_button: // pick image
+
+                createactivityforPickingImages();
+
+                Intent intentIntermediate = new Intent(EmotionDetectionActivity.this, PickImage.class);
+                intentIntermediate.putExtra("Category", CategoryConstants.EMOTIONDETECTION);
+                startActivity(intentIntermediate);
+
+                break;
+
+        }
     }
+
+    private void createactivityforPickingImages() {
+    }
+
+    private void createactivityforTakingPhotos() {
+    }
+
 }
 
