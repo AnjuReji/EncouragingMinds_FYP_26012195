@@ -24,3 +24,4 @@ public class EmotionDetectionActivity extends AppCompatActivity implements View.
 
     }
 }
+
