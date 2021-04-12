@@ -19,7 +19,8 @@ public class TFLiteImageClassification implements ClassifyBehaviour {
     private int mOutputLength;
 
     public TFLiteImageClassification(Interpreter interpreter) {
-        mInterpreter = interpreter;
+        try (Interpreter interpreter1 = mInterpreter = interpreter) {
+        }
         setImageParameters();
     }
 

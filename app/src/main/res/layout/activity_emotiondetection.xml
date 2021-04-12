@@ -59,7 +59,7 @@
                 android:background="@color/colorPrimary"
                 android:fontFamily="@font/latoregular"
                 android:text="Take Photo"
-                android:textSize="10sp" />
+                android:textSize="15sp" />
 
             <Button
                 android:id="@+id/pick_image_button"
@@ -68,8 +68,8 @@
                 android:layout_weight="0.5"
                 android:background="@color/colorPrimary"
                 android:fontFamily="@font/latoregular"
-                android:text="PICK IMAGE"
-                android:textSize="10sp" />
+                android:text="Pick Image"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <View
